@@ -20,20 +20,9 @@ import static data.DataGenerator.getRandomLogin;
 import static data.DataGenerator.getRandomPassword;
 
 public class AuthTest {
-    WebDriver driver;
-
-    @BeforeAll
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
-    }
 
     @BeforeEach
     void setup() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
         open("http://localhost:9999");
     }
 
